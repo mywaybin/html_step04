@@ -1,0 +1,160 @@
+body {
+    color: #444444;
+}
+
+.inner,
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.tit {
+    line-height: 1;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.sec {
+    padding: 100px 0;
+}
+
+.header {
+    line-height: 100px;
+}
+
+.header h1 {
+    height: 50px;
+    width: 60px;
+}
+
+.header .inner {
+    justify-content: space-between;
+}
+
+.header .gnb>ul {
+    gap: 60px;
+}
+
+.header .gnb>ul>li {
+    position: relative;
+}
+
+.header .gnb>ul>li~li::before {
+    /* .header .gnb>ul>li~li -형제 선택자만 해당 (.header .gnb>ul>li -형제, 나 모두 해당) */
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    width: 1px;
+    height: 12px;
+    background: #ddd;
+    transform: translate(0, -50%);
+}
+
+.mainVisual {
+    position: relative;
+    height: 500px;
+    background: url(../img/main02.jpg) no-repeat center center/cover;
+}
+
+.mainVisual::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+}
+
+.mainVisual .inner {
+    /* 팝업 공식
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mainVisual .inner h2 {
+    font-size: 50px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    /* text-indent: -4px; */
+    margin: 0 0 10px 0;
+}
+
+.mainVisual .inner p {
+    position: absolute;
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 25px;
+}
+
+.sub {
+    padding: 30px 0;
+}
+
+.sub h2 {
+    font-weight: 700;
+    font-size: 28px;
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
+.sub>p {
+    text-align: center;
+    margin: 0 0 60px 0;
+    line-height: 20px;
+}
+
+.sub .inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.sub .inner .con {
+    position: relative;
+    padding: 40px 15px;
+    border: 1px solid rgb(22, 218, 224);
+    border-radius: 10px;
+
+    flex: 1 0 30%;
+}
+
+.sub .inner .con h3 {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+}
+
+.sub .inner .con p {
+    font-size: 15px;
+    text-align: center;
+}
+
+.sub .inner .con::after {
+    content: attr(data-txt);
+
+    position: absolute;
+    top: -25px;
+    left: 170px;
+    width: 30px;
+    height: 30px;
+    background: rgb(22, 218, 224);
+    color: #fff;
+    font-size: 25px;
+    font-weight: bolder;
+    line-height: 30px;
+    text-align: center;
+}
