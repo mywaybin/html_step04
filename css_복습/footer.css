@@ -96,65 +96,70 @@ body {
     line-height: 25px;
 }
 
-.sub {
-    padding: 30px 0;
+.mainContent {
+    padding: 50px 0;
 }
 
-.sub h2 {
-    font-weight: 700;
+.mainContent h2 {
     font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 25px 0;
     text-align: center;
-    margin: 0 0 20px 0;
 }
 
-.sub>p {
+.mainContent p {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0 0 30px 0;
     text-align: center;
-    margin: 0 0 60px 0;
-    line-height: 20px;
+    line-height: 16px;
 }
 
-.sub .inner {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.mainContent .inner {
+    display: flex;
     gap: 30px;
-    flex-wrap: wrap;
     width: 1200px;
     margin: 0 auto;
 }
 
-.sub .inner .con {
-    position: relative;
-    padding: 40px 15px;
-    border: 1px solid rgb(22, 218, 224);
-    border-radius: 10px;
-
-    flex: 1 0 30%;
+.mainContent figure {
+    flex: 1;
 }
 
-.sub .inner .con h3 {
-    font-size: 20px;
-    text-align: center;
-    font-weight: 700;
-    margin: 0 0 20px 0;
+.mainContent figure img {
+    width: 100%;
 }
 
-.sub .inner .con p {
+figure {
+    display: block;
+}
+
+.footer {
+    padding: 50px 0;
+    border-top: 1px solid #ddd;
+}
+
+.footer .list {
+    font-size: 0;
+    margin: 0 0 10px 0;
+}
+
+.footer .list li {
+    display: inline-block;
     font-size: 15px;
-    text-align: center;
+    font-weight: 300;
 }
 
-.sub .inner .con::after {
-    content: attr(data-txt);
+.footer .list li~li::before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    background: #ddd;
+    margin: 0 10px;
+    /* vertical-align: -1px; */
+}
 
-    position: absolute;
-    top: -25px;
-    left: 170px;
-    width: 30px;
-    height: 30px;
-    background: rgb(22, 218, 224);
-    color: #fff;
-    font-size: 25px;
-    font-weight: bolder;
-    line-height: 30px;
-    text-align: center;
+.footer .list .bold {
+    font-weight: 500;
 }
